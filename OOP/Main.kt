@@ -18,4 +18,9 @@ class User(name: String,var lastName:String,var age:Int){
             println("The name doesn't with the letter 'a' or 'A' ")
         }
     }
+
+    init {
+
+    }
+
 }
