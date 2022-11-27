@@ -32,7 +32,7 @@ fun main() {
 class User(firstName: String,lastName:String, var age:Int = 0){
     var firstName = firstName
         get() {
-            return "FirstName: $field"
+            return "FirstName: $firstName"
         }
         set(value) {
             println("$value was assigned to firstName property")
@@ -44,6 +44,6 @@ class User(firstName: String,lastName:String, var age:Int = 0){
         }
         set(value) {
             println("$value was assigned to lastName property")
-            field = value
+            firstName = value
         }
 }
