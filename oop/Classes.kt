@@ -1,4 +1,4 @@
-package OOP
+package oop
 
 class Car(name: String, var model: String, var color: String, var doors: Int){
 

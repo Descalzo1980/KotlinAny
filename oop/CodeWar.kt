@@ -1,4 +1,4 @@
-package OOP
+package oop
 
 fun removeChar(str: String): String = str.substring(1,str.lastIndex)
 fun main() {

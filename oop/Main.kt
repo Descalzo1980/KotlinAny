@@ -1,16 +1,20 @@
-package OOP
+package oop
 
 fun main() {
 
 
-    val user = User(firstName = "Alex")
+    val user = User(firstName = "", lastName = "")
+
+    user.firstName = "Vlad"
+    user.lastName = "Nikki"
+
 //    val friend = User("john","Smith")
 //    val worker = User("Boo","Li",99)
 //    val user2 = User(age = 19, firstName = "Iona", lastName = "Debbi")
 
     println(user.firstName)
     println(user.lastName)
-    println(user.age)
+//    println(user.age)
 //
 //    println("\n")
 //
@@ -25,7 +29,7 @@ fun main() {
 //    println("Age =  ${worker.age}")
 }
 
-class User(firstName: String,lastName:String = "LastName", var age:Int = 0){
+class User(firstName: String,lastName:String, var age:Int = 0){
     var firstName = firstName
         get() {
             return "FirstName: $field"
@@ -36,9 +40,10 @@ class User(firstName: String,lastName:String = "LastName", var age:Int = 0){
         }
     var lastName = lastName
         get() {
-            return "Last name : $field"
+            return "LastName : $field"
         }
         set(value) {
             println("$value was assigned to lastName property")
+            field = value
         }
 }
