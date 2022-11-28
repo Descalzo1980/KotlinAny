@@ -1,14 +1,12 @@
 package oop
 
 fun main() {
-
-
-    val user = User(firstName = "Alex", lastName = "Debby", age = 37)
-//    user.company = "Apply"
-    println(user.company)
-
+    Calculator.sum(5,10)
 }
 
-class User(var firstName: String,var lastName:String, var age:Int = 0){
-    lateinit var company: Int
+class Calculator(){
+    companion object{
+        fun sum(a: Int, b: Int) = a + b
+    }
+
 }
