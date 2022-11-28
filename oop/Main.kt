@@ -1,12 +1,16 @@
 package oop
 
 fun main() {
-    Calculator.sum(5,10)
+
 }
 
-class Calculator(){
+class Database private constructor(){
     companion object{
-        fun sum(a: Int, b: Int) = a + b
+        private var instance: Database? =null
+        fun getInstance(){
+            if(instance == null){
+                instance = Database()
+            }
+        }
     }
-
 }
