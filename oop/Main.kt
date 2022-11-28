@@ -1,18 +1,16 @@
 package oop
 
 fun main() {
-    println(Database)
-    println(Database)
-    println(Database)
-    println(Database)
-    println(Database)
-    println(Database)
-    println(Database)
-    println(Database)
+    val user = User("Alex","Boo",33)
+    val user1 by lazy {
+        User("User1", "lastName",8)
+    }
+    println(user1.firstName)
+
 }
 
-object Database{
-    init {
-        println("Database create")
+class User(var firstName: String, var lastName: String,var age:Int){
+    init{
+        println("User : $firstName was created")
     }
 }
