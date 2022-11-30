@@ -4,5 +4,9 @@ enum class Direction(var direction: String,var distance : Int){
     NORTH("север",22),
     SOUTH("юг",44),
     EAST("восток",44),
-    WEST("запад",99)
+    WEST("запад",99);
+
+    fun printData(){
+       println("Direction = $direction and Distance = $distance")
+    }
 }
