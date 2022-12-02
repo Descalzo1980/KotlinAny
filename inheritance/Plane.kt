@@ -11,7 +11,7 @@ class Plane(name: String, color: String,val engines : Int, val doors : Int) : Ve
         super.stop()
     }
 
-    fun flying(){
+    private fun flying(){
         println("The plane is flying")
     }
 }
