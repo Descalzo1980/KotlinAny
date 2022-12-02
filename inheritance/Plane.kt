@@ -1,12 +1,17 @@
 package inheritance
 
-class Plane(val name : String,val color : String,val engines : Int, val doors : Int) {
-
-    fun move(){
-        println("$name is moving")
+class Plane(name: String, color: String,val engines : Int, val doors : Int) : Vehicle(name, color) {
+    override fun move() {
+        flying()
+        super.move()
     }
 
-    fun stop(){
-        println("$name has stopped")
+    override fun stop() {
+
+        super.stop()
+    }
+
+    fun flying(){
+        println("The plane is flying")
     }
 }

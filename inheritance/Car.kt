@@ -1,12 +1,7 @@
 package inheritance
 
-class Car(val name : String,val color : String,val engines : Int, val doors : Int) {
+class Car(name: String,  color: String, val engines : Int, val doors : Int) : Vehicle(name, color) {
 
-    fun move(){
-        println("$name is moving")
-    }
 
-    fun stop(){
-        println("$name has stopped")
-    }
+
 }
