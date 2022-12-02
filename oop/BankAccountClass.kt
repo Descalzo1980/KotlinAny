@@ -3,12 +3,13 @@ package oop
 fun main() {
     var account = BankAccountClass("Boo")
     println(account.balance)
-    account.deposit(100)
+    account.deposit(1000)
     account.withdraw(500)
     account.deposit(-19)
     account.withdraw(-100)
-    account.calculateBalance()
 
+    val calculator = account.calculateBalance()
+    println(calculator)
 
 
 }
