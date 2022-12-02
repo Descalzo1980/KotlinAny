@@ -1,11 +1,12 @@
 package inheritance
 
 fun main() {
-    var car = Car("Tesla", "Red",1,4)
-    var plane = Plane("Boeing", "White and Blue",4,10)
+    val view = View()
+    view.draw()
 
-    car.move()
-    car.stop()
-    plane.move()
-    plane.stop()
+    val button = Button("Push","vertical")
+    button.draw()
+
+    val roundButton = RoundButton("Push","horizontal",20)
+    roundButton.draw()
 }
