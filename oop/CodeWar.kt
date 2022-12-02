@@ -3,6 +3,16 @@ package oop
 import java.util.*
 
 
+fun sum1(numbers: IntArray): Int {
+    var sum = 0
+    for (i in numbers){
+        if (i > 0){
+            sum += i
+        }
+    }
+    return sum
+}
+
 fun removeChar(str: String): String = str.substring(1,str.lastIndex)
 
 fun litres(time: Double): Int {
@@ -29,6 +39,8 @@ fun abbrevName(name:String){
 }
 
 fun main() {
+
+
     val result = removeChar("Hello").apply {
         println(message = this)
     }
