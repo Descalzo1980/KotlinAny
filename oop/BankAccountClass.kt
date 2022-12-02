@@ -2,22 +2,19 @@ package oop
 
 fun main() {
     var account = BankAccountClass("Boo")
-    println(account.balance)
     account.deposit(1000)
     account.withdraw(500)
     account.deposit(-19)
     account.withdraw(-100)
 
-    val calculator = account.calculateBalance()
-    println(calculator)
-
-
+    val balance = account.calculateBalance()
+    println("Balance is $balance")
 }
 
 class BankAccountClass(val accountName : String) {
 
-    var balance = 0
-    var transactions = mutableListOf<Int>()
+    private var balance = 0
+    private var transactions = mutableListOf<Int>()
 
     fun deposit(amount: Int){
         if(amount > 0){
