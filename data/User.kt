@@ -20,4 +20,8 @@ data class User(val firstName : String,val lastName : String,val age : Int ){
         result = 31 * result + age
         return result
     }
+
+    override fun toString(): String {
+        return "User(firstName = $firstName,lastName = $lastName,age = $age)"
+    }
 }
