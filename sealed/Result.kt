@@ -1,13 +1,12 @@
 package sealed
 
-import java.lang.Error
+import java.lang.Exception
 
 
 fun main() {
     val success = Result.Success("Success!")
-    val error = Result.Error("Error!")
-    val process = Result.Error("Progress")
-    getData(process)
+    val process = Result.Progress("Progress")
+    getData(success)
 
 }
 
@@ -17,11 +16,12 @@ fun main() {
 //    ERROR
 //}
 
-fun getData(result: Result){
-    when(result){
-        is Result.Error -> result.showMessage()
-        is Result.Progress -> result.showMessage()
-        is Result.Success -> result.showMessage()
+fun getData(i: Result){
+    when(i){
+        is Result.Progress -> i.showMessage()
+        is Result.Success -> i.showMessage()
+        is Result.Error.NonRecoverableError -> i.showMessage()
+        is Result.Error.RecoverableError -> i.showMessage()
     }
 }
 
@@ -30,7 +30,10 @@ sealed class Result (private val message : String){
         println("Result : $message")
     }
     class Success(message: String) : Result(message)
-    class Error(message: String) : Result(message)
+    sealed class Error(message: String) : Result(message){
+        class RecoverableError(exception: Exception,message: String) : Error(message)
+        class NonRecoverableError(exception: Exception,message: String) : Error(message)
+    }
     class Progress(message: String) : Result(message)
 }
 
