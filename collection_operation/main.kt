@@ -7,6 +7,7 @@ fun main() {
     val numbers = setOf(1,2,3,4,5)
 
     println(numbers.map {if(it == 3) it * 100 else it * 10})
+    println(numbers.mapIndexedNotNull { index, value -> if(index == 0) null else index*value})
 
     val employers = mapOf<Int,String>(1 to "Alex",2 to "Boo",3 to "Bob")
 
