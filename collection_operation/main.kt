@@ -23,7 +23,7 @@ fun main() {
     val colors = listOf("red","brown","grey")
     val animals = listOf("fox","bear","wolf")
     val res = (colors zip animals)
-    val res1 = (colors.zip(animals){color,animal-> "The $animal are $color"})
+    val res1 = (colors.zip(animals){color,animal-> "The ${animal.replaceFirstChar { it.uppercase() }} is $color"})
     println(res1)
 
 }
