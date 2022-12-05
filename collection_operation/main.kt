@@ -17,4 +17,13 @@ fun main() {
     }
     println("Now key = ${result.keys} and names = ${result.values}")
 
+    /*zipping
+    * */
+
+    val colors = listOf("red","brown","grey")
+    val animals = listOf("fox","bear","wolf")
+    val res = (colors zip animals)
+    val res1 = (colors.zip(animals){color,animal-> "The $animal are $color"})
+    println(res1)
+
 }
