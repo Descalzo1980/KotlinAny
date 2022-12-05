@@ -1,0 +1,19 @@
+package collection_operation
+
+import java.util.*
+
+
+fun main() {
+    val numbers = setOf(1,2,3,4,5)
+
+    println(numbers.map {if(it == 3) it * 100 else it * 10})
+
+    val employers = mapOf<Int,String>(1 to "Alex",2 to "Boo",3 to "Bob")
+
+    val result = employers.mapValues { it.key + it.value.length }
+    for (i in result.values){
+        println("Name : $i")
+    }
+    println("Now key = ${result.keys} and names = ${result.values}")
+
+}
