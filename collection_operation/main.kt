@@ -2,18 +2,16 @@ package collection_operation
 
 
 fun main() {
+    val numberString = listOf("one", "two","three","four")
+    println(numberString)
+    println(numberString.joinToString())
+    val listString = StringBuilder("The list of number: ")
+    println(numberString.joinTo(listString))
 
-    /*
-     * flatten*/
+    println(numberString.joinToString(separator = " | ", prefix = "Start: ", postfix = ": end"))
 
-    val numberSets = listOf(setOf(1, 2, 3), setOf(4, 5, 6), setOf(7, 8, 9))
-    for (numbers in numberSets) {
-        for (number in numbers) {
-            println(number)
-        }
-        println("\n")
-    }
-    val numbersFlatten = numberSets.flatten()
-    println(numbersFlatten)
+    val numbers = (1..100).toList()
+    println(numbers.joinToString(limit = 25, truncated = "<...>"))
+    println(numberString.joinToString { "Element: ${it.uppercase()}" })
 }
 
