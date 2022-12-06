@@ -19,5 +19,7 @@ fun main() {
     mixedList.filterIsInstance<Int>().forEach {
         println(it)
     }
-
+    val(match,rest) = numbers.partition { it.length > 3 }
+    println(match)
+    println(rest)
 }
