@@ -28,4 +28,13 @@ fun main() {
     val filterWords = words.filter { it.startsWith("c",ignoreCase = true) }.shuffled().take(1).sorted()
     println(filterWords)
 
+    val cities = listOf("Jeddah", "Bengaluru", "Shenzhen", "Abu Dhabi", "Mountain View", "Tripoli", "Bengaluru", "Lima", "Mandalay", "Tripoli")
+    val oneWordCities = cities.toSet().toList().filter { !it.contains(" ")}.sorted()
+    println(oneWordCities[1])
+
+    val mixed = listOf(1,2,3,'a','b','c',"Hello","Alex",true)
+    mixed.filterIsInstance<Char>().forEach {
+        println(it)
+    }
+
 }
