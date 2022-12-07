@@ -5,12 +5,12 @@ import kotlin.random.Random
 import kotlin.random.nextInt
 
 fun main() {
-    val numbers = mutableListOf(6, 42, 10, 4,100 , 60 ,200)
-    val string = listOf("one","two","three","four")
-    numbers.sorted().forEach { println(it) }
-    println(string.random())
-    val randomValues = List(10) {Random.nextInt(0..100)}
-    println(randomValues)
+//    val numbers = mutableListOf(6, 42, 10, 4,100 , 60 ,200)
+//    val string = listOf("one","two","three","four")
+//    numbers.sorted().forEach { println(it) }
+//    println(string.random())
+//    val randomValues = List(10) {Random.nextInt(0..100)}
+//    println(randomValues)
 
     val laptop = mutableListOf(
         Laptop("Acer",2010,8,2000),
@@ -21,22 +21,28 @@ fun main() {
         Laptop("Dapple",2016,22,5000),
 
     )
-    println("\n")
-    laptop.sorted().forEach { println(it) }
-    println("\n")
-    laptop.sortedWith(comparator = ComparatorRam()).forEach { println(it.ram) }
-    laptop.sortedWith(comparator = ComparatorYear()).forEach { _ -> }
+//    println("\n")
+//    laptop.sorted().forEach { println(it) }
+//    println("\n")
+//    laptop.sortedWith(comparator = ComparatorRam()).forEach { println(it.ram) }
+//    laptop.sortedWith(comparator = ComparatorYear()).forEach { _ -> }
     /*
     * or we can use lambda
     * */
     var sing = "*"
 
+//    println(sing.repeat(80))
+//    laptop.sortedWith(compareBy { it.price }).forEach { println(it) }
+//    println(sing.repeat(80))
+//    laptop.sortedWith(compareBy { it.year }).forEach { println(it) }
+//    println(sing.repeat(80))
+//    laptop.sortedWith(compareBy { it.brand }).forEach { println(it) }
+//    println(sing.repeat(80))
+//    laptop.sortedBy { it.price }.forEach { println(it) }
+//    println(sing.repeat(80))
+//    laptop.sortedBy { it.brand }.forEach { println(it) }
     println(sing.repeat(80))
-    laptop.sortedWith(compareBy { it.price }).forEach { println(it) }
-    println(sing.repeat(80))
-    laptop.sortedWith(compareBy { it.year }).forEach { println(it) }
-    println(sing.repeat(80))
-    laptop.sortedWith(compareBy { it.brand }).forEach { println(it) }
+    laptop.sortedWith(compareBy<Laptop> { it.brand }.thenBy { it.price }.thenBy { it.year }).forEach { println(it) }
 }
 
 data class Laptop(val brand: String,val year: Int,val ram: Int,val price: Int) : Comparable<Laptop>{
