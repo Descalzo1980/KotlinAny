@@ -16,7 +16,10 @@ fun main() {
     println(numbers.dropWhile { it.length < 4 })
     println(numbers.dropLastWhile { it.contains("i") })
 
-    val numbersString = ('a'..'z').toList()
+    val numbersString = (1..10).toList()
     println(numbersString.chunked(3))
+    println(numbersString.chunked(3){it.sum()})
+
+    println(numbers.windowed(3))
 
 }
