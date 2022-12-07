@@ -20,7 +20,7 @@ fun main() {
     val uppercase : (String) -> String = {it.uppercase()}
     println(uppercase("alex"))
 
-    val name = listOf("Alex","Boo","John","Maria","Arabella")
+    val name = listOf("Alex","Boo","John","Maria","Arabella","Bee")
     println( name.sorted())
     println(name.sortedWith { str1: String, str2: String -> str1.length - str2.length })
 
@@ -36,5 +36,12 @@ fun main() {
     mixed.filterIsInstance<Char>().forEach {
         println(it)
     }
+
+    val(match,rest) = numbers.partition { it > 3 }
+    println(match)
+    println(rest)
+    println(name.any { it.endsWith("e") })
+    println(name.none { it.endsWith("w") })
+    println(name.all { it.length > 1 })
 
 }
