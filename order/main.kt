@@ -13,15 +13,18 @@ fun main() {
     println(randomValues)
 
     val laptop = mutableListOf(
-        Laptop("Dell",2022,4,1000),
-        Laptop("Acer",2022,8,2000),
-        Laptop("Bapple",2022,16,3000),
-        Laptop("Capple",2022,16,4000),
-        Laptop("Dapple",2022,16,5000),
-        Laptop("Happle",2022,16,6000)
-    )
+        Laptop("Acer",2010,8,2000),
+        Laptop("Happle",2012,24,6000),
+        Laptop("Capple",2013,20,4000),
+        Laptop("Dell",2014,4,1000),
+        Laptop("Bapple",2015,18,3000),
+        Laptop("Dapple",2016,22,5000),
 
+    )
+    println("\n")
     laptop.sorted().forEach { println(it) }
+    println("\n")
+    laptop.sortedWith(comparator = ComparatorRam()).forEach { println(it.ram) }
 }
 
 data class Laptop(val brand: String,val year: Int,val ram: Int,val price: Int) : Comparable<Laptop>{
@@ -37,4 +40,17 @@ data class Laptop(val brand: String,val year: Int,val ram: Int,val price: Int) :
             0
         }
     }
+}
+
+class ComparatorRam : Comparator<Laptop>{
+    override fun compare(laptop1: Laptop, laptop2: Laptop): Int {
+        return if (laptop1.ram > laptop2.ram){
+            1
+        }else if (laptop1.ram < laptop2.ram){
+            -1
+        }else{
+            0
+        }
+    }
+
 }
