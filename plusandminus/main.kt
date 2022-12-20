@@ -9,6 +9,8 @@ fun main() {
     checkName()
     val number: Int? = null
     println(number ?: "Number is null")
+
+    numb(1,2)
 }
 
 lateinit var name : String
@@ -21,5 +23,7 @@ fun checkName(){
         println("We need name")
     }
 }
-
+fun numb(int : Int, int1 : Int){
+    println(int * int1)
+}
 
