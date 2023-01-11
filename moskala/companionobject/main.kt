@@ -50,7 +50,7 @@ fun main() {
     val eur: EUR = EUR.from("12.00")
     val pln: PLN = PLN.from(20)
     val usd: USD = USD.from(32.5)
-    println("Итого $eur")
+
 }
 
 
