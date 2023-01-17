@@ -33,7 +33,8 @@ fun main() {
         println(i)
     }
 
-    val nextmessage = { println("Hello"); "Goodbye" }()
+    println("Hello")
+    val nextmessage = "Goodbye"
 
 }
 
